@@ -37,8 +37,8 @@ const Home: NextPage = () => {
         <meta name="description" content="AtEventz | Host and attend Events" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="min-h-screen dark:bg-gray-900 dark:text-white">
-        <div className="container mx-auto pt-8">
+      <main className=" dark:bg-gray-900 dark:text-white">
+        <div className="container mx-auto ">
           {/* <Search /> */}
           <EventSection type="Sports" />
           <EventSection type="Party" />
