@@ -13,7 +13,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   return (
     <SessionProvider session={session}>
       <div
@@ -23,7 +23,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
       >
         <div className=" flex min-h-screen flex-col dark:bg-gray-900 dark:text-white">
           <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
-          <div className="flex-1 py-8">
+          <div className="flex-1 py-4 md:py-8">
             <Component {...pageProps} />
           </div>
           <Footer />

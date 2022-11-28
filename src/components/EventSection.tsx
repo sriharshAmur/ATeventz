@@ -8,7 +8,7 @@ const EventSection = ({ type }: { type: string }) => {
     null as unknown as SwiperType
   );
   return (
-    <div className="mx-4 mt-10 md:mx-0">
+    <div className="mx-4 mt-2 mb-4 md:mx-0 md:mt-10">
       <div className="flex items-center justify-between border-b-2 border-gray-300 pb-1 md:mb-4 ">
         <div className="text-2xl font-bold">{type} Eventz</div>
         <div className="hidden items-center lg:flex">
@@ -26,7 +26,7 @@ const EventSection = ({ type }: { type: string }) => {
               <MdArrowForwardIos size={20} />
             </button>
           </div>
-          <div className="mr-2 cursor-pointer rounded border-2 border-violet-600 px-2  hover:bg-violet-600 hover:text-white ">
+          <div className="mr-2 cursor-pointer rounded-lg border-0 bg-blue-900 px-2 py-1 hover:bg-blue-700  ">
             View More
           </div>
         </div>
