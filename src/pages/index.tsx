@@ -39,7 +39,7 @@ const Home: NextPage = () => {
       </Head>
       <main className=" dark:bg-gray-900 dark:text-white">
         <div className="container mx-auto ">
-          {/* <Search /> */}
+          <Search />
           <EventSection type="Sports" />
           <EventSection type="Party" />
         </div>
