@@ -5,14 +5,20 @@ import { SessionProvider } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 
 import "../styles/globals.css";
+import Navigation from "../components/Navigation";
+import { useState } from "react";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
+  const [darkMode, setDarkMode] = useState(false);
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <div className={` min-h-screen ${darkMode ? "dark" : ""}`}>
+        <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Component {...pageProps} />
+      </div>
     </SessionProvider>
   );
 };
