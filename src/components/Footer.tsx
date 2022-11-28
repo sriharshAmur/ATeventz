@@ -24,6 +24,18 @@ const Footer = () => {
               <div>Hobbies</div>
             </div>
           </div>
+
+          <div>
+            <div className="mb-3 text-lg font-bold">Choose By Location</div>
+            <div className="flex flex-col gap-1">
+              <div>Enschede</div>
+              <div>Hengelo</div>
+              <div>Almelo</div>
+              <div>Amsterdam</div>
+              <div>Rotterdam</div>
+            </div>
+          </div>
+
           <div>
             <div className="mb-3 text-lg font-bold">Company</div>
             <div className="flex flex-col gap-1">
