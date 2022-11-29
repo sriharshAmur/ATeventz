@@ -6,6 +6,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 import Search from "../components/Search";
 import EventSection from "../components/EventSection";
+import DeckCards from "../components/DeckCards";
 
 const event = {
   id: "1",
@@ -39,7 +40,24 @@ const Home: NextPage = () => {
       </Head>
       <main className=" dark:bg-gray-900 dark:text-white">
         <div className="container mx-auto ">
-          <Search />
+          <div className="mt-8 mb-16  flex flex-col items-center justify-between md:flex-row">
+            <div className="text-center md:text-left">
+              <div className=" text-4xl font-bold tracking-wider">
+                Attend Eventz. Host Eventz.
+              </div>
+              <div className="mt-1 text-xl font-semibold">
+                For Free. Whenever. Wherever.
+              </div>
+            </div>
+            <div className="hidden md:mt-0 md:block md:w-1/4">
+              <DeckCards />
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-4">
+            <div className="text-xl font-bold">Search for your next Event</div>
+            <Search />
+          </div>
+
           <EventSection type="Sports" />
           <EventSection type="Party" />
         </div>
