@@ -10,19 +10,23 @@ import Event from "../../components/Event";
 const ID = () => {
   const router = useRouter();
   const { eventId } = router.query;
+  const BgNumber = (parseInt(eventId as string) % 6).toString();
+  const bgText = `bg-gradient-to-bl from-eventBgFrom${BgNumber} to-eventBgTo${BgNumber}`;
   return (
     <div className="h-full dark:bg-gray-900 dark:text-white">
       <div className="mx-auto  p-4 pt-4 lg:max-w-[900px]">
         <div
           onClick={() => router.back()}
-          className="flex w-fit cursor-pointer items-center rounded-xl px-2 py-1 hover:bg-gray-400 dark:bg-gray-700 "
+          className="flex w-fit cursor-pointer items-center rounded-xl bg-gray-300 px-2 py-1 hover:bg-gray-400 dark:bg-gray-700 hover:dark:bg-gray-500 "
         >
           <div className="mr-1 grid place-items-center ">
             <MdArrowBackIosNew />
           </div>
           <div>Back</div>
         </div>
-        <div className="mt-4  rounded-3xl  bg-gradient-to-bl from-[#C53E3E] to-[#513EC5] px-3 py-6 text-white transition md:p-10">
+        <div
+          className={`mt-4  rounded-3xl  ${bgText} px-3 py-6 text-white transition md:p-10`}
+        >
           <div className=" font-semibold text-[#E8E8E8] ">
             Games and Activities
           </div>

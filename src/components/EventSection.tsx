@@ -26,7 +26,7 @@ const EventSection = ({ type }: { type: string }) => {
               <MdArrowForwardIos size={20} />
             </button>
           </div>
-          <div className="mr-2 cursor-pointer rounded-lg border-0 bg-blue-900 px-2 py-1 hover:bg-blue-700  ">
+          <div className="mr-2 cursor-pointer rounded-lg border-0 bg-blue-900 px-2 py-1 text-white hover:bg-blue-700  ">
             View More
           </div>
         </div>

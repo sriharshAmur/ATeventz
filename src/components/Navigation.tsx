@@ -21,9 +21,11 @@ const Navigation = ({
           <div className="hidden items-center lg:flex">
             <div className="mx-3 ">Attending</div>
             <div className="mx-3 ">Hosting</div>
-            <div className="mx-3 grid place-items-center">
-              <IoSearch size={20} />
-            </div>
+            <Link href="/events">
+              <div className="mx-3 grid place-items-center">
+                <IoSearch size={20} />
+              </div>
+            </Link>
           </div>
         </div>
 

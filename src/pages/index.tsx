@@ -49,7 +49,7 @@ const Home: NextPage = () => {
                 For Free. Whenever. Wherever.
               </div>
             </div>
-            <div className="hidden md:mt-0 md:block md:w-1/4">
+            <div className="hidden md:block md:w-1/4">
               <DeckCards />
             </div>
           </div>

@@ -6,9 +6,13 @@ import { HiUserGroup } from "react-icons/hi";
 import Link from "next/link";
 
 const Event = ({ eventId }: { eventId: number }) => {
+  const BgNumber = (eventId % 6).toString();
+  const bgText = `bg-gradient-to-bl from-eventBgFrom${BgNumber} to-eventBgTo${BgNumber}`;
   return (
     <Link href={`/events/${eventId}`}>
-      <div className="mt-2 min-w-[200px] cursor-pointer rounded-[40px] bg-gradient-to-bl  from-[#C53E3E] to-[#513EC5] p-10 text-white transition lg:hover:-translate-y-2">
+      <div
+        className={`mt-2 min-w-[200px] cursor-pointer rounded-[40px] ${bgText} p-10 text-white transition lg:hover:-translate-y-2`}
+      >
         <div>
           <div>
             <div className="mb-1 text-sm font-semibold tracking-wide text-[#E8E8E8]">

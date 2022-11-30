@@ -27,11 +27,11 @@ const Search = () => {
   // const [kmsAway, setKmsAway] = useState("");
 
   return (
-    <div className="relative mx-auto w-3/5">
-      <div className="rounded-xl border-2 border-gray-500 px-8 py-8">
+    <div className="relative w-7/12">
+      <div className="rounded border-2 border-gray-600 px-8 py-8 dark:border-gray-300">
         <div className="min-w-200px mx-auto mb-8 w-2/3">
           <input
-            className="w-full rounded-xl border-2 border-gray-600 px-4 py-2 outline-none dark:border-gray-400 dark:bg-gray-900"
+            className="w-full rounded-xl border-2 border-gray-600 px-4 py-2 outline-none dark:border-gray-300 dark:bg-gray-900 dark:text-white"
             value={searchTerm}
             placeholder="Search for events"
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -59,7 +59,7 @@ const Search = () => {
               <select
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                className="rounde1 w-52 border-2 border-black p-2 text-lg outline-0 dark:text-black"
+                className=" w-52 rounded border-2 border-black bg-transparent p-2 text-lg outline-0 dark:border-gray-300"
               >
                 <option value="">Any</option>
                 <option value="Enschede">Enschede</option>
@@ -117,7 +117,7 @@ const Search = () => {
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="rounde1 w-52 border-2 border-black p-2 text-lg outline-0 dark:text-black"
+                className="rounde1 w-52 border-2 border-black bg-transparent p-2 text-lg outline-0 dark:border-gray-300"
               >
                 <option value="">Any</option>
                 <option value="Music">Music</option>
@@ -128,17 +128,17 @@ const Search = () => {
               </select>
             </div>
           </div>
-          <div>
+          {/* <div>
             <div className="text-lg ">Date</div>
             <div>
               <input
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className="w-44 border-2 border-black p-2 text-lg dark:text-black"
+                className="w-44 border-2 border-black bg-transparent p-2 text-lg dark:border-gray-300"
               />
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="mx-auto mt-6 w-fit">
           <button className=" rounded-xl border-2 px-6 py-2">Search</button>
