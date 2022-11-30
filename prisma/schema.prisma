@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   // NOTE: When using postgresql, mysql or sqlserver, uncomment the @db.Text annotations in model Account below
   // Further reading:
   // https://next-auth.js.org/adapters/prisma#create-the-prisma-schema
@@ -27,12 +27,12 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? // @db.Text
-  access_token      String? // @db.Text
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? // @db.Text
+  id_token          String? @db.Text
   session_state     String?
   user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -55,6 +55,12 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  hostedEvents  Event[]   @relation("Host")
+  attending     Event[]   @relation("Attendee")
+  city          String?
+  country       String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
 }
 
 model VerificationToken {
@@ -63,4 +69,47 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Address {
+  id        String   @id @default(cuid())
+  houseNo   String
+  street    String
+  city      String
+  state     String
+  zip       String
+  country   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  Event Event[]
+}
+
+enum Category {
+  MUSIC
+  ART
+  SPORTS
+  FOOD
+  OTHER
+}
+
+model Event {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  name        String
+  description String
+  date        DateTime
+  address     Address  @relation(fields: [addressId], references: [id])
+  category    Category @default(OTHER)
+  limit       Boolean  @default(false)
+  maxAttendee Int      @default(0)
+  paid        Boolean  @default(false)
+  price       Float    @default(0)
+  image       String
+  link        String
+  attendees   User[]   @relation("Attendee")
+  host        User     @relation(fields: [hostId], references: [id], name: "Host")
+  hostId      String
+  addressId   String
 }
